@@ -12,12 +12,26 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* Change the global font to Montserrat */
+    font-family: 'Montserrat', sans-serif;
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
     margin: 0;
     padding: 0;
+}
+
+.main-nav a {
+    color: var(--text);
+    text-decoration: none;
+    
+    /* Replicate the screenshot's typography */
+    font-weight: 700; /* Makes it thick */
+    font-size: 0.9em;
+    letter-spacing: 2px; /* Adds the wide spacing between letters */
+    text-transform: uppercase; /* Forces all caps */
+    
+    transition: color 0.2s;
 }
 
 /* Header & Navigation */
@@ -39,16 +53,6 @@ body {
     flex-wrap: wrap;
     gap: 25px;
     margin-bottom: 25px;
-}
-
-.main-nav a {
-    color: var(--text);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9em;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    transition: color 0.2s;
 }
 
 .main-nav a:hover,
