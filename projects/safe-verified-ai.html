@@ -4,123 +4,222 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safe-VerifiedAI | Mattia Portfolio</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Apply your creative font for this page */
-        body {
-            font-family: 'Poppins', sans-serif;
+        /* Project-Specific Layout CSS */
+        .project-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
         }
 
         .project-header {
             text-align: center;
-            padding: 60px 20px 20px;
+            margin-bottom: 40px;
         }
-        
+
         .back-link {
             display: inline-block;
-            margin-bottom: 20px;
-            color: var(--primary);
+            margin-bottom: 30px;
+            color: var(--text);
             text-decoration: none;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9em;
+            letter-spacing: 1.5px;
+            font-size: 0.85em;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
         }
-        
+
         .back-link:hover {
-            text-decoration: underline;
+            border-color: var(--text);
         }
 
         .project-title {
-            font-size: 2.5em;
-            /* Example: Change specific heading color */
-            color: #2c3e50; /* A different dark blue */
-            margin: 0 0 15px 0;
-        }
-
-        .project-body {
-            /* Example: Add a specific, subtle background color and border color */
-            background-color: #e0f2fe; /* Very light blue */
-            border: 1px solid #cbd5e1;
-            border-radius: 8px;
-            padding: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            margin-bottom: 60px;
-        }
-
-        .project-body h3 {
+            font-size: 3em;
+            margin: 0 0 20px 0;
             color: var(--text);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
-            margin-top: 30px;
+            line-height: 1.1;
+        }
+
+        /* Tags inspired by the Lennyka layout */
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .tag-pill {
+            background-color: transparent;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 1.1em;
         }
 
-        .project-body h3:first-child {
-            margin-top: 0;
-        }
-
-        .project-body ul {
-            padding-left: 20px;
-        }
-
-        .project-body li {
-            margin-bottom: 12px;
-            color: var(--text);
-        }
-
-        /* 2. ADD CSS FOR YOUR ILLUSTRATIVE IMAGE(S) */
-        .project-image {
-            max-width: 100%;
+        /* Hero Image - Maltby style */
+        .project-hero-image {
+            width: 100%;
             height: auto;
-            border-radius: 8px;
-            margin-bottom: 25px; /* Adjust spacing as needed */
-            display: block; /* Ensure it's a block element for easy spacing */
-            margin-left: auto;
-            margin-right: auto; /* Center the image */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Add a subtle shadow */
+            border-radius: 4px;
+            margin-bottom: 60px;
+            display: block;
         }
 
-        .action-container {
-            text-align: center;
-            margin-top: 40px;
+        /* Two-column layout */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .main-content h2 {
+            font-size: 1.4em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+        }
+
+        .main-content ul {
+            padding-left: 20px;
+            margin-bottom: 40px;
+        }
+
+        .main-content li {
+            margin-bottom: 15px;
+        }
+
+        /* Sidebar Metadata */
+        .sidebar {
+            background-color: var(--surface);
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            height: fit-content;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .meta-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .meta-list li {
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        .meta-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .meta-label {
+            display: block;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sidebar-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-    <div class="content-wrapper">
+    <div class="project-wrapper">
         <header class="project-header">
             <a href="index.html#projects" class="back-link">← Back to Portfolio</a>
             <h1 class="project-title">Safe-VerifiedAI</h1>
+            
+            <div class="project-tags">
+                <span class="tag-pill">Reinforcement Learning</span>
+                <span class="tag-pill">Fairness Shield</span>
+                <span class="tag-pill">PPO</span>
+                <span class="tag-pill">Gymnasium</span>
+            </div>
         </header>
 
-        <main class="project-body">
-            
-            <img src="path/to/shield_illustration.png" alt="Fairness Shield Illustration" class="project-image">
+        <img src="https://placehold.co/1000x500/f6f8fa/d97736?text=Agent+Comparison+Plot+or+Architecture+Diagram" alt="Safe-VerifiedAI Visualization" class="project-hero-image">
 
-            <h3>The Goal</h3>
-            <p>To develop a Reinforcement Learning framework that mitigates bias and enforces fairness constraints in AI agents using a real-time Normative Fairness Shield, preventing discrimination against protected groups in automated decision-making systems.</p>
+        <div class="project-grid">
+            <main class="main-content">
+                <h2>Overview</h2>
+                <p>This project tackles a critical issue in AI: agents trained on biased historical data will naturally learn to discriminate against protected groups to maximize their baseline reward. To solve this, we implemented a Constructive Oracle Shield.</p>
+                <p>The framework monitors demographic parity in real-time, actively intervening on unfair decisions, and utilizes reward shaping to teach the agent to be fair over time.</p>
 
-            <h3>Work Done</h3>
-            <ul>
-                <li><strong>Synthetic Biased Environment:</strong> Built a custom <code>CreditDataGenerator</code> simulating a credit scoring environment where protected groups have artificially lowered scores, tricking an unshielded agent into making biased rejections.</li>
-                <li><strong>Constructive Oracle Shield:</strong> Implemented a stateful fairness monitor that tracks Demographic Parity in real-time, actively intervening to override biased rejections into fair approvals for qualified candidates.</li>
-                <li><strong>Reward Shaping Wrapper:</strong> Designed a custom <code>Gymnasium</code> wrapper that penalizes the Proximal Policy Optimization (PPO) agent when the shield intervenes, transferring the shield's "fairness knowledge" into the agent's core policy over time.</li>
-                <li><strong>Comparative Auditing:</strong> Set up a testing pipeline to train, evaluate, and generate comparative plots analyzing the performance and fairness metrics of shielded versus unshielded agents.</li>
-            </ul>
+                <h2 style="margin-top: 50px;">The Pipeline</h2>
+                <ul>
+                    <li><strong>Synthetic Biased Environment:</strong> Built a custom <code>CreditDataGenerator</code> simulating a credit scoring environment where protected groups have artificially lowered scores, tricking an unshielded agent into making biased rejections.</li>
+                    <li><strong>Constructive Oracle Shield:</strong> Implemented a stateful fairness monitor that tracks Demographic Parity. It intervenes by overriding biased rejections into fair approvals for qualified candidates belonging to protected statuses.</li>
+                    <li><strong>Reward Shaping:</strong> Designed a custom <code>Gymnasium</code> wrapper that penalizes the Proximal Policy Optimization (PPO) agent when the shield intervenes. This transfers the shield's constraints into the agent's core policy.</li>
+                </ul>
+            </main>
 
-            <div class="action-container">
-                <a href="https://github.com/kjanija/Safe-VerifiedAI" class="btn" target="_blank">View Repository on GitHub</a>
-            </div>
-        </main>
+            <aside class="sidebar">
+                <h3>Project Details</h3>
+                <ul class="meta-list">
+                    <li>
+                        <span class="meta-label">Date</span>
+                        2026
+                    </li>
+                    <li>
+                        <span class="meta-label">Context</span>
+                        Academic Project / Exam
+                    </li>
+                    <li>
+                        <span class="meta-label">Tech Stack</span>
+                        Python, PyTorch, Gymnasium
+                    </li>
+                    <li>
+                        <span class="meta-label">Repository</span>
+                        <a href="https://github.com/kjanija/Safe-VerifiedAI" target="_blank" class="sidebar-link">View Source Code →</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
     </div>
 
 </body>
