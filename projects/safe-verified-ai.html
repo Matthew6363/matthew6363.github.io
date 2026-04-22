@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safe-VerifiedAI | Mattia Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Apply your creative font for this page */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
         .project-header {
             text-align: center;
             padding: 60px 20px 20px;
@@ -28,13 +38,15 @@
 
         .project-title {
             font-size: 2.5em;
-            color: var(--text);
+            /* Example: Change specific heading color */
+            color: #2c3e50; /* A different dark blue */
             margin: 0 0 15px 0;
         }
 
         .project-body {
-            background-color: var(--surface);
-            border: 1px solid var(--border);
+            /* Example: Add a specific, subtle background color and border color */
+            background-color: #e0f2fe; /* Very light blue */
+            border: 1px solid #cbd5e1;
             border-radius: 8px;
             padding: 40px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.03);
@@ -64,6 +76,18 @@
             color: var(--text);
         }
 
+        /* 2. ADD CSS FOR YOUR ILLUSTRATIVE IMAGE(S) */
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 25px; /* Adjust spacing as needed */
+            display: block; /* Ensure it's a block element for easy spacing */
+            margin-left: auto;
+            margin-right: auto; /* Center the image */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Add a subtle shadow */
+        }
+
         .action-container {
             text-align: center;
             margin-top: 40px;
@@ -79,6 +103,9 @@
         </header>
 
         <main class="project-body">
+            
+            <img src="path/to/shield_illustration.png" alt="Fairness Shield Illustration" class="project-image">
+
             <h3>The Goal</h3>
             <p>To develop a Reinforcement Learning framework that mitigates bias and enforces fairness constraints in AI agents using a real-time Normative Fairness Shield, preventing discrimination against protected groups in automated decision-making systems.</p>
 
