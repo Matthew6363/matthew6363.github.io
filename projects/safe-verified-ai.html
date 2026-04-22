@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe-VerifiedAI | Mattia Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-header {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-title {
+            font-size: 2.5em;
+            color: var(--text);
+            margin: 0 0 15px 0;
+        }
+
+        .project-body {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            margin-bottom: 60px;
+        }
+
+        .project-body h3 {
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1em;
+        }
+
+        .project-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .project-body ul {
+            padding-left: 20px;
+        }
+
+        .project-body li {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .action-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <header class="project-header">
+            <a href="index.html#projects" class="back-link">← Back to Portfolio</a>
+            <h1 class="project-title">Safe-VerifiedAI</h1>
+        </header>
+
+        <main class="project-body">
+            <h3>The Goal</h3>
+            <p>To develop a Reinforcement Learning framework that mitigates bias and enforces fairness constraints in AI agents using a real-time Normative Fairness Shield, preventing discrimination against protected groups in automated decision-making systems.</p>
+
+            <h3>Work Done</h3>
+            <ul>
+                <li><strong>Synthetic Biased Environment:</strong> Built a custom <code>CreditDataGenerator</code> simulating a credit scoring environment where protected groups have artificially lowered scores, tricking an unshielded agent into making biased rejections.</li>
+                <li><strong>Constructive Oracle Shield:</strong> Implemented a stateful fairness monitor that tracks Demographic Parity in real-time, actively intervening to override biased rejections into fair approvals for qualified candidates.</li>
+                <li><strong>Reward Shaping Wrapper:</strong> Designed a custom <code>Gymnasium</code> wrapper that penalizes the Proximal Policy Optimization (PPO) agent when the shield intervenes, transferring the shield's "fairness knowledge" into the agent's core policy over time.</li>
+                <li><strong>Comparative Auditing:</strong> Set up a testing pipeline to train, evaluate, and generate comparative plots analyzing the performance and fairness metrics of shielded versus unshielded agents.</li>
+            </ul>
+
+            <div class="action-container">
+                <a href="https://github.com/kjanija/Safe-VerifiedAI" class="btn" target="_blank">View Repository on GitHub</a>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
